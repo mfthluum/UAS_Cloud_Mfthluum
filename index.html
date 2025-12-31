@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Miftahul Ulum | Identity Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="home-portal">
+    <div class="grid-overlay"></div>
+    <div class="line-v"></div>
+    <div class="line-h"></div>
+
+    <nav class="reveal">
+        <div class="logo">UM<span>.06</span></div>
+        <div class="status">SYSTEM_ONLINE // 2025</div>
+    </nav>
+
+    <main class="portal-main">
+        <div class="profile-frame reveal">
+            <div class="image-container">
+                <img src="gagah.jpeg" alt="Ulum">
+                <div class="corner-top"></div>
+                <div class="corner-bottom"></div>
+            </div>
+        </div>
+
+        <div class="info-frame reveal">
+            <span class="tagline">MUHAMAD MIFTAHUL ULUM</span>
+            <h1 class="main-name">MODERN<br><span class="accent-text">VISIONARY</span></h1>
+            <p class="description">Membangun jembatan antara nilai spiritualitas dan efisiensi teknologi. Tumbuh dalam doa, berjalan dengan logika.</p>
+            <div class="portal-actions">
+                <a href="jurnal.html" class="cta-primary">OPEN JOURNAL ARCHIVE</a>
+                <div class="social-links">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="reveal">
+        <div class="scroll-note">BASED IN TANGERANG, ID // EST. 2006</div>
+    </footer>
+
+    <script>
+        function playGreeting() {
+            const speech = new SpeechSynthesisUtterance();
+            // speech.text = "Halo, selamat datang di portal digital Muhamad Miftahul Ulum. Senang bercerita dengan anda.";
+            // speech.lang = 'id-US';
+            // speech.rate = 1.0;
+            // window.speechSynthesis.speak(speech);
+        }
+
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach((el, i) => {
+                setTimeout(() => el.classList.add('active'), i * 300);
+            });
+            // Jalankan suara (beberapa browser butuh interaksi klik dulu)
+            playGreeting();
+        });
+
+        // Backup suara jika autoplay diblokir browser
+        document.body.addEventListener('click', () => {
+            if (!window.speechSynthesis.speaking) playGreeting();
+        }, { once: true });
+    </script>
+</body>
+</html>

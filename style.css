@@ -1,0 +1,152 @@
+:root {
+    --bg: #050505;
+    --accent: #00e5ff;
+    --accent-glow: rgba(0, 229, 255, 0.4);
+    --text: #c0c0c0;
+    --glass: rgba(255, 255, 255, 0.02);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
+
+/* DECORATION */
+.grid-overlay { position: fixed; inset: 0; background-image: linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px); background-size: 60px 60px; z-index: -1; }
+.line-v { position: fixed; left: 10%; top: 0; width: 1px; height: 100%; background: rgba(255,255,255,0.03); z-index: -1; }
+.line-h { position: fixed; left: 0; top: 20%; width: 100%; height: 1px; background: rgba(255,255,255,0.03); z-index: -1; }
+
+/* NAV & LOGO */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 40px 10%; }
+.logo { font-family: 'Syncopate'; font-weight: 700; font-size: 1.5rem; letter-spacing: -2px; color: #fff; }
+.logo span { color: var(--accent); }
+.status { font-size: 0.6rem; letter-spacing: 3px; color: #555; }
+
+/* PORTAL HOME */
+.portal-main { height: 75vh; display: flex; align-items: center; padding: 0 10%; gap: 80px; }
+.profile-frame { flex: 1; display: flex; justify-content: center; }
+.image-container { position: relative; width: 300px; height: 420px; border: 1px solid rgba(255,255,255,0.1); }
+.image-container img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: 0.5s; }
+.image-container:hover img { filter: grayscale(0); }
+.corner-top { position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; border-top: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+.corner-bottom { position: absolute; bottom: -10px; left: -10px; width: 30px; height: 30px; border-bottom: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+
+.info-frame { flex: 1.5; }
+.tagline { color: var(--accent); font-size: 0.8rem; letter-spacing: 5px; font-weight: 700; }
+.main-name { font-family: 'Syncopate'; font-size: 4rem; line-height: 0.9; margin: 20px 0; color: #fff; }
+.accent-text { color: var(--accent); text-shadow: 0 0 20px var(--accent-glow); }
+.description { max-width: 450px; color: #888; margin-bottom: 40px; }
+
+.cta-primary { text-decoration: none; background: var(--accent); color: #000; padding: 18px 35px; font-weight: 700; font-size: 0.8rem; transition: 0.3s; display: inline-block; }
+.cta-primary:hover { transform: translateY(-5px); box-shadow: 0 10px 20px var(--accent-glow); }
+.portal-actions { display: flex; align-items: center; gap: 30px; }
+.social-links a { color: #555; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; }
+
+/* JURNAL DESIGN */
+.back-terminal-btn { position: fixed; top: 40px; left: 40px; z-index: 1000; text-decoration: none; color: var(--accent); font-family: 'Syncopate'; font-size: 0.6rem; padding: 12px 20px; background: rgba(0,229,255,0.05); border: 1px solid rgba(0,229,255,0.2); overflow: hidden; backdrop-filter: blur(5px); transition: 0.4s; }
+.back-terminal-btn:hover { background: var(--accent); color: #000; transform: translateX(10px); }
+.btn-scanline { position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(0,229,255,0.3), transparent); transition: 0.5s; }
+.back-terminal-btn:hover .btn-scanline { left: 100%; }
+
+.jurnal-header { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.category { letter-spacing: 5px; color: var(--accent); font-size: 0.7rem; }
+.scroll-indicator { margin-top: 30px; font-size: 0.6rem; letter-spacing: 4px; color: #444; }
+
+.story-wrapper { padding: 50px 0 150px; }
+.story-section { max-width: 900px; margin: 0 auto 120px; display: grid; grid-template-columns: 180px 1fr; gap: 40px; padding: 0 20px; }
+.section-meta { font-family: 'Syncopate'; font-size: 0.6rem; color: var(--accent); border-top: 1px solid var(--accent); padding-top: 10px; }
+.content h2 { font-family: 'Syncopate'; font-size: 1.4rem; margin-bottom: 25px; color: #fff; }
+.content p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+
+.story-section.alt { grid-template-columns: 1fr 180px; }
+.story-section.alt .section-meta { grid-column: 2; grid-row: 1; }
+.story-section.alt .content { grid-column: 1; grid-row: 1; }
+
+.cyber-quote { border-left: 2px solid var(--accent); padding: 25px; background: var(--glass); font-style: italic; color: #fff; margin: 30px 0; }
+.end-mark { margin-top: 50px; font-family: 'Syncopate'; font-size: 0.6rem; color: var(--accent); letter-spacing: 3px; }
+
+/* ANIMATION */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+    .portal-main { flex-direction: column; height: auto; padding: 100px 10% 50px; text-align: center; }
+    .main-name { font-size: 2.5rem; }
+    .story-section, .story-section.alt { grid-template-columns: 1fr; }
+}
+
+/* --- LOADING SCREEN STYLE --- */
+.loading-screen {
+    background: #000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--accent);
+}
+
+.loader-content {
+    text-align: center;
+    width: 300px;
+}
+
+.loader-title {
+    font-family: 'Syncopate';
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Progress Bar Animasi 5 Detik */
+.progress-container {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+    animation: loadProgress 5s linear forwards;
+}
+
+@keyframes loadProgress {
+    0% { left: -100%; }
+    100% { left: 0%; }
+}
+
+.loader-status {
+    font-size: 0.6rem;
+    font-family: 'Syncopate';
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.security-codes {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    font-family: 'Space Grotesk';
+    font-size: 0.6rem;
+    color: #333;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.dots {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}

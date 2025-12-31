@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Archive | Journal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="jurnal-view">
+    <div class="grid-overlay"></div>
+    
+    <a href="index.html" class="back-terminal-btn">
+        <span class="btn-scanline"></span>
+        <span class="btn-text">
+            <span class="btn-icon">×</span> EXIT_ARCHIVE // RETURN_TO_TERMINAL
+        </span>
+    </a>
+
+    <header class="jurnal-header reveal">
+        <div class="container">
+            <span class="category">MEMOIR / REFLEKSI DIRI</span>
+            <h1>PENCARIAN<br><span class="accent-text">MAKNA HIDUP</span></h1>
+            <div class="scroll-indicator">SCROLL_DOWN_TO_READ</div>
+        </div>
+    </header>
+
+    <div class="story-wrapper">
+        <section class="story-section reveal">
+            <div class="section-meta">LOG.001 // IDENTITY</div>
+            <div class="content">
+                <h2>AKAR DAN IDENTITAS</h2>
+                <p>Aku menulis bagian ini sebagai bentuk kejujuran pada diriku sendiri—tentang perjalanan panjang yang tidak selalu lurus, tidak selalu mudah, tetapi selalu penuh makna. Aku lahir pada tahun 2006 di Tangerang, dari keluarga pribumi Tangerang. Ayah dan ibuku berasal dari suku Betawi Tangerang.</p>
+                <p>Dari pertemuan dua latar budaya inilah aku dibesarkan, dalam lingkungan yang sederhana, religius, dan penuh nilai kekeluargaan. Hidupku sejak kecil telah dibingkai oleh nilai, doa, dan harapan yang besar. Aku tumbuh dikelilingi oleh sosok ibu dan kakak-kakak yang menjadi guru pertamaku dalam keteguhan hati.</p>
+            </div>
+        </section>
+
+        <section class="story-section alt reveal">
+            <div class="section-meta">LOG.002 // PRESSURE</div>
+            <div class="content">
+                <h2>BEBAN SANG BUNGSU</h2>
+                <p>Menjadi anak bungsu sering kali dipersepsikan sebagai posisi yang paling ringan. Namun kenyataannya, bagiku justru sebaliknya. Menjadi anak bungsu adalah perjalanan yang sangat melelahkan secara batin.</p>
+                <p>Ada tekanan untuk menjadi harapan terakhir, untuk tidak mengecewakan orang tua yang semakin menua, serta untuk menyamai bahkan melampaui pencapaian kakak-kakak. Beban itu jarang diucapkan, tetapi terasa setiap hari, menumpuk perlahan di dalam dada.</p>
+                <blockquote class="cyber-quote">
+                    "Hidup bukan hanya tentang diriku sendiri. Ada harapan yang diam-diam diletakkan di pundakku."
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="story-section reveal">
+            <div class="section-meta">LOG.003 // THE STORM</div>
+            <div class="content">
+                <h2>BADAI DAN ADAPTASI</h2>
+                <p>Keinginanku untuk merantau runtuh saat pandemi. Aku bertanya pada Allah: mengapa sekarang? Mengapa saat aku sedang bersungguh-sungguh? Namun justru di sanalah Allah memperlihatkan sisi lain: kemampuan beradaptasi, memimpin sebagai Ketua OSIS, dan belajar teknologi.</p>
+                <p>Skenario Allah mungkin membingungkan di awal, tetapi membantuku bertumbuh di dunia yang sama sekali baru.</p>
+            </div>
+        </section>
+
+        <section class="story-section alt reveal">
+            <div class="section-meta">LOG.004 // LESSONS</div>
+            <div class="content">
+                <h2>ADAB DAN RIDHA</h2>
+                <p>Kegagalan pahit saat melangkah tanpa restu mengajarkanku tentang adab dan pentingnya doa orang tua. Mimpi di masa paling gelap menjadi pengingat lembut bahwa Allah tidak pernah jauh. Aku belajar bahwa dekat bukan berarti sempit, dan sederhana bukan berarti rendah.</p>
+            </div>
+        </section>
+
+        <section class="story-section reveal footer-story">
+            <div class="section-meta">LOG.005 // CONCLUSION</div>
+            <div class="content">
+                <h2>KESEIMBANGAN</h2>
+                <p>Hari ini, ketika aku menjalani kuliah sambil tetap mengabdi di pesantren, aku mulai memahami makna keseimbangan. Aku tidak ingin sekadar hidup untuk mengejar gelar. Aku ingin memahami untuk apa aku berjalan.</p>
+                <p>Tugasku bukan memahami segalanya sekarang, melainkan terus berjalan dengan jujur, bersungguh-sungguh, dan berserah. Dan sejauh ini, aku bersyukur karena masih diberi kekuatan untuk belajar.</p>
+                <div class="end-mark">EOF // ARSIP SELESAI</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
